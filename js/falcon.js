@@ -60,8 +60,9 @@ function rad(deg) {
 
     let mixer = [];
     const gltfLoader = new GLTFLoader();
-    let url = window.location.href +'/models/falc.gltf';
-    let objects = [];
+    let     url = "" + window.location.href +"/models/falc.gltf";
+
+let objects = [];
     for (let c = 0; c < 5; c++) {
         gltfLoader.load(url, (gltf) => {
             objects[c] = gltf.scene.children[0];
@@ -77,7 +78,7 @@ function rad(deg) {
             scene.add(objects[c]);
         });
     }
-    url = window.location.href +'/models/text.gltf';
+    url = "" + window.location.href +"/models/text.gltf";
     let text = undefined;
     gltfLoader.load(url, (gltf) => {
         let texture = new THREE.TextureLoader().load(window.location.href +"models/capt.jpg");
