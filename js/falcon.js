@@ -42,7 +42,7 @@ function rad(deg) {
     camera.position.set(0, 10, 45);
     const scene = new THREE.Scene();
 
-    let texture = new THREE.TextureLoader().load("models/background.jpg");
+    let texture = new THREE.TextureLoader().load(window.location.href + "models/background.jpg");
     texture.magFilter = THREE.NearestFilter;
     texture.minFilter = THREE.NearestFilter;
 
@@ -60,7 +60,7 @@ function rad(deg) {
 
     let mixer = [];
     const gltfLoader = new GLTFLoader();
-    let url = '/models/falc.gltf';
+    let url = window.location.href +'/models/falc.gltf';
     let objects = [];
     for (let c = 0; c < 5; c++) {
         gltfLoader.load(url, (gltf) => {
@@ -77,10 +77,10 @@ function rad(deg) {
             scene.add(objects[c]);
         });
     }
-    url = '/models/text.gltf';
+    url = window.location.href +'/models/text.gltf';
     let text = undefined;
     gltfLoader.load(url, (gltf) => {
-        let texture = new THREE.TextureLoader().load("models/capt.jpg");
+        let texture = new THREE.TextureLoader().load(window.location.href +"models/capt.jpg");
         texture.magFilter = THREE.NearestFilter;
         texture.minFilter = THREE.NearestFilter;
         text = gltf.scene.children[0];
@@ -98,7 +98,7 @@ function rad(deg) {
     });
 
     const plane = new THREE.PlaneGeometry();
-    texture = new THREE.TextureLoader().load("models/mutecity.png");
+    texture = new THREE.TextureLoader().load(window.location.href +"models/mutecity.png");
     texture.format = THREE.RGBA32F
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
